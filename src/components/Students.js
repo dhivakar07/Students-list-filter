@@ -1,4 +1,4 @@
-function Students({ student }) {
+function Students({ student, index, onUpdate, onDelete }) {
   return (
     <>
       <div className="student-box">
@@ -6,6 +6,8 @@ function Students({ student }) {
         <p>Age : {student.age}</p>
         <p>Course : {student.course}</p>
         <p>Status : {student.status || "Not Available"}</p>
+        <button onClick={() => onUpdate(index)}>Update</button>
+        <button onClick={() => onDelete(index)}>Delete</button>
       </div>
     </>
   );
